@@ -35,7 +35,7 @@ class CharacterTable(object):
             x = x.argmax(axis=-1)
         return "".join(self.indices_char[i] for i in x)
 
-ctable = CharacterTable(chars
+ctable = CharacterTable(chars)
                         
 ctable.indices_char
                         
@@ -46,7 +46,7 @@ print('Generating data...')
 while len(questions) < TRAINING_SIZE:
     f = lambda: int(''.join(np.random.choice(list('0123456789')) for i in range(np.random.randint(1, DIGITS + 1))))
     a, b = f(), f()
-    if a < b
+    if a < b:
         t = b
         b = a
         a = t
